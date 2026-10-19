@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-top">
         <div className="footer-nav-row">
-          <a href="#/" className="footer-brand">
+          <a href="/" className="footer-brand">
             <img
               src={NavLogo2}
               alt="Sindhur Motos Icon"
@@ -17,11 +17,11 @@ export default function Footer() {
             <img src={NavLogo1} alt="Sindhur Motos" className="footer-logo1" />
           </a>
           <nav className="footer-nav-links">
-            <a href="#/">Home</a>
-            <a href="#/about">About</a>
-            <a href="#/contact">Contact</a>
-            <a href="#/privacy">Privacy</a>
-            <a href="#/privacy">Terms</a>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/privacy">Terms</a>
           </nav>
         </div>
 

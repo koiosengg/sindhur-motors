@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <a href="#/" className="navbar-brand" onClick={closeMenu}>
+        <a href="/" className="navbar-brand" onClick={closeMenu}>
           <img
             src={NavLogo2}
             alt="Sindhur Motos Icon"
@@ -33,15 +33,15 @@ export default function Navbar() {
         </a>
         <div className="navbar-tabs">
           <div className="navbar-links">
-            <a href="#/" className={route === "/" ? "active" : ""}>
+            <a href="/" className={route === "/" ? "active" : ""}>
               Home
             </a>
-            <a href="#/about" className={route === "/about" ? "active" : ""}>
+            <a href="/about" className={route === "/about" ? "active" : ""}>
               About
             </a>
           </div>
           <div className="navbar-divider" />
-          <a href="#/contact" className="navbar-contact-btn">
+          <a href="/contact" className="navbar-contact-btn">
             Contact
           </a>
         </div>
@@ -92,21 +92,21 @@ export default function Navbar() {
       <div className={`mobile-nav-menu ${isOpen ? "open" : ""}`}>
         <div className="mobile-nav-links">
           <a
-            href="#/"
+            href="/"
             className={route === "/" ? "active" : ""}
             onClick={closeMenu}
           >
             Home
           </a>
           <a
-            href="#/about"
+            href="/about"
             className={route === "/about" ? "active" : ""}
             onClick={closeMenu}
           >
             About
           </a>
           <a
-            href="#/contact"
+            href="/contact"
             className={`mobile-nav-contact-btn ${route === "/contact" ? "active" : ""}`}
             onClick={closeMenu}
           >

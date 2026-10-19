@@ -307,7 +307,7 @@ export default function Privacy() {
                 If you have questions, concerns, or requests regarding this
                 Privacy Policy or your personal information, please connect with
                 us via our{" "}
-                <a href="#/contact" className="privacy-link">
+                <a href="/contact" className="privacy-link">
                   Contact Page
                 </a>
                 .

@@ -35,7 +35,7 @@ export const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Support & Inquiries",
-    url: `${BASE_URL}/#/contact`,
+    url: `${BASE_URL}/contact`,
     availableLanguage: ["English"],
   },
   sameAs: [
@@ -88,7 +88,7 @@ export const aboutPageSchema = {
   name: `About ${COMPANY_NAME}`,
   description:
     "Discover the vision, journey, and engineering philosophy behind Sindhur Motos electric mobility.",
-  url: `${BASE_URL}/#/about`,
+  url: `${BASE_URL}/about`,
   mainEntity: {
     "@type": "Organization",
     name: COMPANY_NAME,
@@ -111,7 +111,7 @@ export const contactPageSchema = {
   name: `Contact ${COMPANY_NAME}`,
   description:
     "Get in touch with Sindhur Motos for launch notifications, partnership inquiries, and test rides.",
-  url: `${BASE_URL}/#/contact`,
+  url: `${BASE_URL}/contact`,
   mainEntity: {
     "@type": "Organization",
     name: COMPANY_NAME,
@@ -119,7 +119,7 @@ export const contactPageSchema = {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Support",
-      url: `${BASE_URL}/#/contact`,
+      url: `${BASE_URL}/contact`,
       availableLanguage: ["English"],
     },
   },
@@ -134,7 +134,7 @@ export const privacyPageSchema = {
   name: `Privacy Policy - ${COMPANY_NAME}`,
   description:
     "Learn how Sindhur Motos protects and handles your personal information.",
-  url: `${BASE_URL}/#/privacy`,
+  url: `${BASE_URL}/privacy`,
   publisher: {
     "@type": "Organization",
     name: COMPANY_NAME,
@@ -176,7 +176,7 @@ export const getBreadcrumbSchema = (pageName, pagePath) => ({
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: `${BASE_URL}/#/`,
+      item: `${BASE_URL}/`,
     },
     ...(pagePath && pagePath !== "/"
       ? [
@@ -184,7 +184,7 @@ export const getBreadcrumbSchema = (pageName, pagePath) => ({
             "@type": "ListItem",
             position: 2,
             name: pageName,
-            item: `${BASE_URL}/#${pagePath.startsWith("/") ? pagePath : `/${pagePath}`}`,
+            item: `${BASE_URL}${pagePath.startsWith("/") ? pagePath : `/${pagePath}`}`,
           },
         ]
       : []),
