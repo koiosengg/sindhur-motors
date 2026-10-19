@@ -1,0 +1,32 @@
+{
+  "name": "Sindhur Motos",
+  "description": "Next-generation electric vehicle mobility and futuristic engineering.",
+  "url": "https://www.sindhurmotos.com",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "name": "Home",
+      "type": "webpage",
+      "url": "https://www.sindhurmotos.com/",
+      "description": "Sindhur Motos homepage and electric vehicle preview"
+    },
+    {
+      "name": "About",
+      "type": "webpage",
+      "url": "https://www.sindhurmotos.com/about",
+      "description": "Engineering vision, philosophy, and brand journey"
+    },
+    {
+      "name": "Contact",
+      "type": "webpage",
+      "url": "https://www.sindhurmotos.com/contact",
+      "description": "Customer support, partnership inquiries, and launch updates"
+    },
+    {
+      "name": "Privacy Policy",
+      "type": "webpage",
+      "url": "https://www.sindhurmotos.com/privacy",
+      "description": "User privacy policy and data governance"
+    }
+  ]
+}

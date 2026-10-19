@@ -1,0 +1,15 @@
+# Sindhur Motos
+
+> Sindhur Motos pioneers next-generation electric mobility, crafting futuristic electric two-wheelers built for performance, urban transit, and clean sustainability.
+
+## Pages & Overview
+
+- [Home](https://www.sindhurmotos.com/): Official homepage featuring electric vehicle innovations, banner showcases, and features.
+- [About Us](https://www.sindhurmotos.com/about): The vision, journey, and engineering philosophy behind Sindhur Motos.
+- [Contact](https://www.sindhurmotos.com/contact): Customer inquiries, dealership and partnership opportunities, and launch notifications.
+- [Privacy Policy](https://www.sindhurmotos.com/privacy): Details on how personal information and user data are managed and protected.
+
+## Technical & Discovery
+
+- [Sitemap](https://www.sindhurmotos.com/sitemap.xml): Machine-readable XML sitemap for indexing.
+- [AI Catalog](https://www.sindhurmotos.com/ai-catalog.json): Manifest for autonomous AI agents and resource discovery.

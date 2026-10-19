@@ -6,7 +6,7 @@
 export const BASE_URL =
   typeof window !== "undefined" && window.location.origin
     ? window.location.origin
-    : "https://sindhurmotors.com";
+    : "https://www.sindhurmotos.com";
 
 export const COMPANY_NAME = "Sindhur Motos";
 export const ALTERNATE_NAME = "Sindhur Motos";

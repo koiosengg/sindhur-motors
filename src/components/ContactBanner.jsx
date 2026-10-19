@@ -188,8 +188,8 @@ export default function ContactBanner() {
               {status.submitting
                 ? "Submitting..."
                 : status.submitted
-                ? "Request Submitted ✓"
-                : "Submit Request"}
+                  ? "Submitted"
+                  : "Submit"}
             </button>
           </form>
         </div>
