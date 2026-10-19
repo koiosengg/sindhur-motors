@@ -1,32 +1,94 @@
 {
-  "name": "Sindhur Motos",
-  "description": "Next-generation electric vehicle mobility and futuristic engineering.",
-  "url": "https://www.sindhurmotos.com",
-  "version": "1.0.0",
-  "resources": [
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Sindhur Motos",
+    "identifier": "did:web:sindhurmotos.com",
+    "documentationUrl": "https://www.sindhurmotos.com/about"
+  },
+  "entries": [
     {
-      "name": "Home",
-      "type": "webpage",
+      "identifier": "urn:air:sindhurmotos.com:page:home",
+      "displayName": "Sindhur Motos Home",
+      "type": "text/html",
       "url": "https://www.sindhurmotos.com/",
-      "description": "Sindhur Motos homepage and electric vehicle preview"
+      "description": "Official homepage featuring Sindhur Motos electric vehicle innovations, futuristic mobility, and lineup preview.",
+      "tags": [
+        "electric-vehicles",
+        "ev",
+        "sindhur-motos",
+        "sustainable-mobility"
+      ],
+      "representativeQueries": [
+        "What electric vehicles does Sindhur Motos offer?",
+        "Explore Sindhur Motos electric scooter features and lineup"
+      ]
     },
     {
-      "name": "About",
-      "type": "webpage",
+      "identifier": "urn:air:sindhurmotos.com:page:about",
+      "displayName": "About Sindhur Motos",
+      "type": "text/html",
       "url": "https://www.sindhurmotos.com/about",
-      "description": "Engineering vision, philosophy, and brand journey"
+      "description": "Vision, engineering philosophy, and the brand journey behind Sindhur Motos electric mobility.",
+      "tags": [
+        "about",
+        "company",
+        "engineering-vision",
+        "sustainability"
+      ],
+      "representativeQueries": [
+        "What is the vision and story behind Sindhur Motos?",
+        "Learn about Sindhur Motos electric vehicle engineering philosophy"
+      ]
     },
     {
-      "name": "Contact",
-      "type": "webpage",
+      "identifier": "urn:air:sindhurmotos.com:page:contact",
+      "displayName": "Contact Sindhur Motos",
+      "type": "text/html",
       "url": "https://www.sindhurmotos.com/contact",
-      "description": "Customer support, partnership inquiries, and launch updates"
+      "description": "Customer support, dealership inquiries, partnership opportunities, and launch notifications.",
+      "tags": [
+        "contact",
+        "support",
+        "dealership",
+        "partnerships"
+      ],
+      "representativeQueries": [
+        "How do I contact Sindhur Motos for dealership inquiries?",
+        "Customer support and contact details for Sindhur Motos"
+      ]
     },
     {
-      "name": "Privacy Policy",
-      "type": "webpage",
+      "identifier": "urn:air:sindhurmotos.com:page:privacy",
+      "displayName": "Privacy Policy",
+      "type": "text/html",
       "url": "https://www.sindhurmotos.com/privacy",
-      "description": "User privacy policy and data governance"
+      "description": "User privacy policy, customer data protection practices, and governance at Sindhur Motos.",
+      "tags": [
+        "privacy",
+        "policy",
+        "legal",
+        "terms"
+      ],
+      "representativeQueries": [
+        "What is Sindhur Motos privacy policy?",
+        "How does Sindhur Motos handle customer data?"
+      ]
+    },
+    {
+      "identifier": "urn:air:sindhurmotos.com:resource:llms-txt",
+      "displayName": "Sindhur Motos LLM Context",
+      "type": "text/plain",
+      "url": "https://www.sindhurmotos.com/llms.txt",
+      "description": "Structured summary of Sindhur Motos for autonomous AI agents and language models.",
+      "tags": [
+        "llms-txt",
+        "ai-discovery",
+        "agent-context"
+      ],
+      "representativeQueries": [
+        "Read Sindhur Motos LLM context file",
+        "Summary of Sindhur Motos website for AI agents"
+      ]
     }
   ]
 }
