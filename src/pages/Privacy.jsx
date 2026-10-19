@@ -1,10 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { PrivacyPageStructuredData } from "../structured-data/index.jsx";
 
 export default function Privacy() {
   return (
     <div className="privacy-page-wrapper">
+      <PrivacyPageStructuredData />
       <Navbar />
 
       <main className="privacy-page">
@@ -19,7 +21,7 @@ export default function Privacy() {
               Privacy <span className="highlight-blue">Policy</span>
             </h1>
             <p className="privacy-subtitle">
-              Last updated: October 2026 • Sindhur Motors
+              Last updated: October 2026 • Sindhur Motos
             </p>
           </header>
 
@@ -27,7 +29,7 @@ export default function Privacy() {
             <section className="privacy-section">
               <h2>1. Introduction</h2>
               <p>
-                Welcome to <strong>Sindhur Motors</strong> ("we", "us", or
+                Welcome to <strong>Sindhur Motos</strong> ("we", "us", or
                 "our"). We are committed to protecting your personal information
                 and being transparent about how we collect, use, and handle data
                 when you visit our website or interact with our preview and
