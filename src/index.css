@@ -170,9 +170,23 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.banner-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .banner-content {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -1019,5 +1033,244 @@ button {
     background: #000;
     filter: blur(50px);
     bottom: -50px;
+  }
+}
+
+/* Privacy Policy Page */
+.privacy-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+}
+
+.privacy-page {
+  position: relative;
+  width: 100%;
+  padding: 80px 160px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.privacy-glow-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.privacy-glow {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(48, 70, 157, 0.45) 0%,
+    rgba(12, 48, 141, 0) 70%
+  );
+  filter: blur(80px);
+}
+
+.privacy-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1120px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.privacy-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 32px;
+}
+
+.privacy-title {
+  color: #fff;
+  font-family: var(--font-Body, Manrope);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.privacy-subtitle {
+  color: var(--text-secondary);
+  font-family: var(--font-Body, Manrope);
+  font-size: 15px;
+  margin: 0;
+}
+
+.privacy-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.privacy-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.privacy-section h2 {
+  color: #ffffff;
+  font-family: var(--font-Body, Manrope);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.privacy-section p {
+  color: #cbd5e1;
+  font-family: var(--font-Body, Manrope);
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.privacy-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.privacy-section li {
+  color: #cbd5e1;
+  font-family: var(--font-Body, Manrope);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.privacy-section li strong {
+  color: #ffffff;
+}
+
+.privacy-card {
+  background: rgba(14, 18, 28, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  backdrop-filter: blur(10px);
+}
+
+.privacy-card h3 {
+  color: #f1f5f9;
+  font-family: var(--font-Body, Manrope);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.privacy-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 14, 22, 0.7);
+}
+
+.privacy-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: var(--font-Body, Manrope);
+  font-size: 14px;
+}
+
+.privacy-table th {
+  padding: 14px 18px;
+  background: rgba(48, 70, 157, 0.15);
+  color: #ffffff;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+.privacy-table td {
+  padding: 14px 18px;
+  color: #cbd5e1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  line-height: 1.5;
+}
+
+.privacy-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.privacy-table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.privacy-note {
+  font-size: 14px !important;
+  color: var(--text-muted) !important;
+  font-style: italic;
+}
+
+.privacy-link {
+  color: #60a5fa;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+
+.privacy-link:hover {
+  color: #93c5fd;
+}
+
+@media screen and (max-width: 1024px) {
+  .privacy-page {
+    padding: 60px 48px 90px 48px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .privacy-page {
+    padding: 40px 20px 80px 20px;
+  }
+
+  .privacy-container {
+    gap: 36px;
+  }
+
+  .privacy-content {
+    gap: 32px;
+  }
+
+  .privacy-card {
+    padding: 18px 16px;
+  }
+
+  .privacy-table th,
+  .privacy-table td {
+    padding: 10px 12px;
+    font-size: 13px;
   }
 }

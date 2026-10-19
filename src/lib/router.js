@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export const ROUTES = ['/', '/about', '/contact']
+export const ROUTES = ['/', '/about', '/contact', '/privacy', '/terms']
 
 export function resolveRoute() {
   const hash = window.location.hash.replace(/^#/, '')
