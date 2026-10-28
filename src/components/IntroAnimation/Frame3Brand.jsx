@@ -29,10 +29,9 @@ export default function Frame3Brand({ onNext, duration = 4200 }) {
       {/* Centered blue blur glow element */}
       <div className="brand-glow-blob" />
 
-      {/* Brand Logo Image with smooth sheen glow */}
+      {/* Brand Logo Image */}
       <div className="brand-logo-wrapper">
         <img src={logoSvg} alt="Sindhur Motos" className="brand-logo-img" />
-        <div className="brand-light-sheen" />
       </div>
     </div>
   );

@@ -157,26 +157,6 @@
   filter: blur(150px);
   pointer-events: none;
   z-index: 1;
-  animation: glowBlobPulse 3.6s ease-in-out infinite alternate;
-  will-change: transform, opacity, filter;
-}
-
-@keyframes glowBlobPulse {
-  0% {
-    transform: translate(-50%, -50%) scale(0.88);
-    opacity: 0.55;
-    filter: blur(130px);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.28);
-    opacity: 0.82;
-    filter: blur(160px);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.05);
-    opacity: 0.68;
-    filter: blur(145px);
-  }
 }
 
 .tagline-text {
@@ -189,12 +169,34 @@
   justify-content: center;
   gap: 0.4em;
   max-width: 1200px;
-  animation: taglineEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   transition:
     opacity 0.5s ease,
     transform 0.5s ease,
     filter 0.5s ease;
   will-change: opacity, transform, filter;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.82em;
+  background-color: #0c55f3;
+  margin-left: 4px;
+  vertical-align: -0.05em;
+  border-radius: 2px;
+  -webkit-text-fill-color: #0c55f3;
+  box-shadow: 0 0 12px rgba(12, 85, 243, 0.8);
+  animation: typewriterBlink 0.65s step-start infinite;
+}
+
+@keyframes typewriterBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .tagline-highlight {
@@ -258,8 +260,6 @@
   filter: blur(150px);
   pointer-events: none;
   z-index: 1;
-  animation: glowBlobPulse 3.6s ease-in-out infinite alternate;
-  will-change: transform, opacity, filter;
 }
 
 .brand-logo-wrapper {
@@ -268,10 +268,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   border-radius: 8px;
   padding: 0.5rem;
-  animation: brandEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: brandEntrance 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   transition:
     opacity 0.5s ease,
     transform 0.5s ease,
@@ -286,35 +285,6 @@
   max-width: 90vw;
   object-fit: contain;
   display: block;
-}
-
-/* Moving Light Sheen Beam across Logo */
-.brand-light-sheen {
-  position: absolute;
-  top: 0;
-  left: -70%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.08) 35%,
-    rgba(255, 255, 255, 0.28) 50%,
-    rgba(45, 68, 156, 0.25) 65%,
-    transparent 100%
-  );
-  transform: skewX(-20deg);
-  pointer-events: none;
-  animation: logoSheenSweep 3.2s 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-@keyframes logoSheenSweep {
-  0% {
-    left: -70%;
-  }
-  100% {
-    left: 150%;
-  }
 }
 
 /* ==========================================================================
@@ -356,28 +326,19 @@
   }
 }
 
-@keyframes taglineEntrance {
-  0% {
-    opacity: 0;
-    transform: translateY(20px) scale(0.96);
-    filter: blur(8px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-}
-
 @keyframes brandEntrance {
   0% {
     opacity: 0;
-    transform: scale(0.92);
+    transform: scale(0.6, 0.78);
     filter: blur(8px) drop-shadow(0 0 10px rgba(45, 68, 156, 0.2));
+  }
+  30% {
+    opacity: 1;
+    filter: blur(0) drop-shadow(0 0 25px rgba(45, 68, 156, 0.4));
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1, 1);
     filter: blur(0) drop-shadow(0 0 35px rgba(45, 68, 156, 0.5));
   }
 }
@@ -388,7 +349,7 @@
     aspect-ratio: 1/1 !important;
     background: #2d449c !important;
     opacity: 0.7 !important;
-    filter: blur(100px) !important;
+    filter: blur(150px) !important;
   }
 
   .tagline-text {
@@ -438,7 +399,7 @@
     aspect-ratio: 1/1 !important;
     background: #2d449c !important;
     opacity: 0.7 !important;
-    filter: blur(100px) !important;
+    filter: blur(150px) !important;
   }
 
   .brand-logo-wrapper {

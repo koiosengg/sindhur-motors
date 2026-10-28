@@ -58,7 +58,7 @@ export default function IntroAnimation({ onFinish }) {
       <div className="intro-stage">
         {currentStep === 0 && <Frame1Video onNext={handleNext} />}
         {currentStep === 1 && (
-          <Frame2Tagline onNext={handleNext} duration={3200} />
+          <Frame2Tagline onNext={handleNext} duration={4500} />
         )}
         {currentStep === 2 && (
           <Frame3Brand onNext={handleNext} duration={4200} />
