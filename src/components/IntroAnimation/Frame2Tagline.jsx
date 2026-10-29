@@ -36,7 +36,7 @@ export default function Frame2Tagline({ onNext, duration = 3200 }) {
           }
           return prev + 1;
         });
-      }, 45);
+      }, 95);
 
       return () => clearInterval(interval);
     }, 200);
