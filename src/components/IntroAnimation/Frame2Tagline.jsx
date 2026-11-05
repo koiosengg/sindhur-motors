@@ -11,9 +11,12 @@ export default function Frame2Tagline({ onNext, duration = 3200 }) {
 
   useEffect(() => {
     // Start exit transition 600ms before next frame
-    const leaveTimer = setTimeout(() => {
-      setIsLeaving(true);
-    }, Math.max(duration - 600, 1000));
+    const leaveTimer = setTimeout(
+      () => {
+        setIsLeaving(true);
+      },
+      Math.max(duration - 600, 1000),
+    );
 
     const nextTimer = setTimeout(() => {
       onNext?.();
