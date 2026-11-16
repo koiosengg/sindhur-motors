@@ -5,6 +5,7 @@ import Contact from "./pages/Contact.jsx";
 import Privacy from "./pages/Privacy.jsx";
 import { useRoute } from "./lib/router.js";
 import IntroAnimation from "./components/IntroAnimation/IntroAnimation.jsx";
+import CookieConsent from "./components/CookieConsent.jsx";
 
 export default function App() {
   const route = useRoute();
@@ -26,6 +27,8 @@ export default function App() {
       {showIntro && <IntroAnimation onFinish={() => setShowIntro(false)} />}
 
       <main>{page}</main>
+
+      <CookieConsent isIntroActive={showIntro} />
     </>
   );
 }
