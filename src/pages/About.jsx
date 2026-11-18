@@ -8,7 +8,7 @@ import aboutPoster from "../assets/About/Banner.webp";
 
 export default function About() {
   return (
-    <div>
+    <div className="about-page">
       <AboutPageStructuredData />
       <Navbar />
       <Banner className="banner-about" video={aboutVideo} poster={aboutPoster} />
@@ -16,4 +16,3 @@ export default function About() {
     </div>
   );
 }
-

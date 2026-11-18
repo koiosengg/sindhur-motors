@@ -17,21 +17,21 @@ import M7 from "../assets/Home/VehicleSlider/7-mobile.webp";
 import M8 from "../assets/Home/VehicleSlider/8-mobile.webp";
 
 const desktopSlides = [
-  { id: 1, title: "Made for Living", image: D1 },
-  { id: 2, title: "Made for Living", image: D2 },
-  { id: 3, title: "Made for Living", image: D3 },
-  { id: 4, title: "Made for Living", image: D4 },
+  { id: 1, image: D1 },
+  { id: 2, image: D2 },
+  { id: 3, image: D3 },
+  { id: 4, image: D4 },
 ];
 
 const mobileSlides = [
-  { id: 1, title: "Made for Living", image: M1 },
-  { id: 2, title: "Made for Living", image: M2 },
-  { id: 3, title: "Made for Living", image: M3 },
-  { id: 4, title: "Made for Living", image: M4 },
-  { id: 5, title: "Made for Living", image: M5 },
-  { id: 6, title: "Made for Living", image: M6 },
-  { id: 7, title: "Made for Living", image: M7 },
-  { id: 8, title: "Made for Living", image: M8 },
+  { id: 1, image: M1 },
+  { id: 2, image: M2 },
+  { id: 3, image: M3 },
+  { id: 4, image: M4 },
+  { id: 5, image: M5 },
+  { id: 6, image: M6 },
+  { id: 7, image: M7 },
+  { id: 8, image: M8 },
 ];
 
 export default function VehicleSlider() {
@@ -44,6 +44,7 @@ export default function VehicleSlider() {
 
   const [currentDesktop, setCurrentDesktop] = useState(0);
   const [currentMobile, setCurrentMobile] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(null);
 
   useEffect(() => {
@@ -58,26 +59,32 @@ export default function VehicleSlider() {
   const slides = isMobile ? mobileSlides : desktopSlides;
   const setCurrent = isMobile ? setCurrentMobile : setCurrentDesktop;
 
-  const isStart = current === 0;
-  const isEnd = current === slides.length - 1;
+  // Auto-delay timer (cycles every 4 seconds)
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [slides.length, setCurrent, isPaused, current]);
 
   const prevSlide = () => {
-    if (!isStart) {
-      setCurrent((prev) => prev - 1);
-    }
+    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    if (!isEnd) {
-      setCurrent((prev) => prev + 1);
-    }
+    setCurrent((prev) => (prev + 1) % slides.length);
   };
 
   const handleTouchStart = (e) => {
+    setIsPaused(true);
     touchStartX.current = e.touches[0].clientX;
   };
 
   const handleTouchEnd = (e) => {
+    setIsPaused(false);
     if (touchStartX.current === null) return;
     const diff = touchStartX.current - e.changedTouches[0].clientX;
     if (diff > 50) nextSlide();
@@ -90,6 +97,8 @@ export default function VehicleSlider() {
       className="vehicle-slider"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
       {/* Desktop Background cycle layers (hidden under 1200px) */}
       <div className="slider-bg-desktop-group">
@@ -130,16 +139,11 @@ export default function VehicleSlider() {
       </div>
 
       <div className="slider-footer">
-        <div className="slider-footer-spacer" />
-        <h2 className="slider-title">
-          {slides[current]?.title || "Made for Living"}
-        </h2>
         <div className="slider-controls">
           <button
             type="button"
             onClick={prevSlide}
-            disabled={isStart}
-            className={`slider-arrow-btn ${isStart ? "inactive" : ""}`}
+            className="slider-arrow-btn"
             aria-label="Previous slide"
           >
             <svg
@@ -151,19 +155,14 @@ export default function VehicleSlider() {
             >
               <path
                 d="M2.873 8.25H15V6.75H2.873L8.56925 1.05375L7.5 0L0 7.5L7.5 15L8.56925 13.9462L2.873 8.25Z"
-                fill={
-                  isStart
-                    ? "var(--color-Text-Black-400, #383838)"
-                    : "var(--color-BG-White, #FFF)"
-                }
+                fill="var(--color-BG-White, #FFF)"
               />
             </svg>
           </button>
           <button
             type="button"
             onClick={nextSlide}
-            disabled={isEnd}
-            className={`slider-arrow-btn ${isEnd ? "inactive" : ""}`}
+            className="slider-arrow-btn"
             aria-label="Next slide"
           >
             <svg
@@ -175,11 +174,7 @@ export default function VehicleSlider() {
             >
               <path
                 d="M12.127 8.25H0V6.75H12.127L6.43075 1.05375L7.5 0L15 7.5L7.5 15L6.43075 13.9462L12.127 8.25Z"
-                fill={
-                  isEnd
-                    ? "var(--color-Text-Black-400, #383838)"
-                    : "var(--color-BG-White, #FFF)"
-                }
+                fill="var(--color-BG-White, #FFF)"
               />
             </svg>
           </button>

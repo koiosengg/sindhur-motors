@@ -7,16 +7,12 @@ const FULL_TEXT = `${TEXT_PART1} ${TEXT_PART2}`;
 export default function Frame2Tagline({ onNext, duration = 3200 }) {
   const [isLeaving, setIsLeaving] = useState(false);
   const [charCount, setCharCount] = useState(0);
-  const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
     // Start exit transition 600ms before next frame
-    const leaveTimer = setTimeout(
-      () => {
-        setIsLeaving(true);
-      },
-      Math.max(duration - 600, 1000),
-    );
+    const leaveTimer = setTimeout(() => {
+      setIsLeaving(true);
+    }, Math.max(duration - 600, 1000));
 
     const nextTimer = setTimeout(() => {
       onNext?.();
@@ -47,17 +43,7 @@ export default function Frame2Tagline({ onNext, duration = 3200 }) {
     return () => clearTimeout(startDelay);
   }, []);
 
-  useEffect(() => {
-    if (charCount >= FULL_TEXT.length) {
-      const cursorTimer = setTimeout(() => {
-        setShowCursor(false);
-      }, 500);
-      return () => clearTimeout(cursorTimer);
-    }
-  }, [charCount]);
-
   const part1Length = TEXT_PART1.length;
-  const isTypingPart1 = charCount <= part1Length;
   const hasStartedPart2 = charCount > part1Length;
 
   const displayedPart1 = TEXT_PART1.slice(0, Math.min(charCount, part1Length));
@@ -65,10 +51,6 @@ export default function Frame2Tagline({ onNext, duration = 3200 }) {
     charCount > part1Length + 1
       ? TEXT_PART2.slice(0, charCount - (part1Length + 1))
       : "";
-
-  const cursorElement = (
-    <span className="typewriter-cursor" aria-hidden="true" />
-  );
 
   return (
     <div
@@ -79,18 +61,12 @@ export default function Frame2Tagline({ onNext, duration = 3200 }) {
       {/* Centered blue blur glow element */}
       <div className="tagline-glow-blob" />
 
-      {/* Tagline Text with typewriter effect from center */}
+      {/* Tagline Text with typewriter effect without cursor */}
       <h1 className="tagline-text" aria-label={FULL_TEXT}>
-        <span className="tagline-highlight">
-          {displayedPart1}
-          {showCursor && isTypingPart1 ? cursorElement : null}
-        </span>
+        <span className="tagline-highlight">{displayedPart1}</span>
         {hasStartedPart2 ? " " : null}
-        {hasStartedPart2 ? (
-          <span className="tagline-rest">
-            {displayedPart2}
-            {showCursor && !isTypingPart1 ? cursorElement : null}
-          </span>
+        {hasStartedPart2 && displayedPart2 ? (
+          <span className="tagline-rest">{displayedPart2}</span>
         ) : null}
       </h1>
     </div>

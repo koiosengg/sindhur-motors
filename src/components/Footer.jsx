@@ -3,9 +3,9 @@ import NavLogo1 from "../assets/Footer/logo2.webp";
 import NavLogo2 from "../assets/Navbar/logo2.webp";
 import SindhurSvg from "../assets/Footer/sindhur.svg";
 
-export default function Footer() {
+export default function Footer({ className = "" }) {
   return (
-    <footer className="footer">
+    <footer className={`footer ${className}`}>
       <div className="footer-top">
         <div className="footer-nav-row">
           <a href="/" className="footer-brand">
@@ -22,6 +22,19 @@ export default function Footer() {
             <a href="/contact">Contact</a>
             <a href="/privacy">Privacy</a>
             <a href="/privacy">Terms</a>
+            <button
+              type="button"
+              className="footer-cookie-btn"
+              onClick={() => {
+                if (window.openCookieConsent) {
+                  window.openCookieConsent();
+                } else {
+                  window.dispatchEvent(new Event("open-cookie-consent"));
+                }
+              }}
+            >
+              Cookies
+            </button>
           </nav>
         </div>
 
